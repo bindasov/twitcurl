@@ -128,6 +128,7 @@ public:
 
     /* Internal cURL related methods */
     int saveLastWebResponse( char*& data, size_t size );
+    bool performGet( const std::string& getUrl );
 
     /* cURL proxy APIs */
     std::string& getProxyServerIp();
@@ -184,7 +185,6 @@ private:
     void prepareCurlCallback();
     void prepareCurlUserPass();
     void prepareStandardParams();
-    bool performGet( const std::string& getUrl );
     bool performGetInternal( const std::string& getUrl,
                              const std::string& oAuthHttpHeader );
     bool performDelete( const std::string& deleteUrl );
